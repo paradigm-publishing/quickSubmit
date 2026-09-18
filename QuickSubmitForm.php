@@ -17,6 +17,7 @@ namespace APP\plugins\importexport\quickSubmit;
 use APP\core\Application;
 use APP\facades\Repo;
 use APP\journal\Journal;
+use Illuminate\Support\Facades\DB;
 use APP\plugins\importexport\quickSubmit\classes\form\SubmissionMetadataForm;
 use APP\publication\Publication;
 use APP\submission\Submission;
@@ -298,7 +299,7 @@ class QuickSubmitForm extends Form
             $this->_submission = Repo::submission()->dao->newDataObject();
             $this->_submission->setData('contextId', $this->_context->getId());
             $this->_submission->setData('status', PKPSubmission::STATUS_QUEUED);
-            $this->_submission->setData('submissionProgress', 'start');
+            $this->_submission->setData('submissionProgress', '');
             $this->_submission->stampLastActivity();
             $this->_submission->setData('stageId', WORKFLOW_STAGE_ID_SUBMISSION);
             $this->_submission->setData('sectionId', $sectionId = current(array_keys($sectionOptions)));
@@ -312,6 +313,12 @@ class QuickSubmitForm extends Form
 
             Repo::submission()->add($this->_submission, $publication, $this->_context);
             $this->_submission = Repo::submission()->get($this->_submission->getId());
+
+            DB::table('submission_settings')->insert([
+                'submission_id' => $this->_submission->getId(),
+                'setting_name' => 'generatedBy',
+                'setting_value' => 'quicksubmit',
+            ]);
 
             $this->setData('submissionId', $this->_submission->getId());
 
@@ -424,7 +431,7 @@ class QuickSubmitForm extends Form
         }
 
         $this->_submission->setData('locale', $this->getData('locale'));
-        $this->_submission->setData('stageId', WORKFLOW_STAGE_ID_PRODUCTION);
+        $this->_submission->setData('stageId', WORKFLOW_STAGE_ID_EDITING);
         $this->_submission->setData('dateSubmitted', Core::getCurrentDate());
         $this->_submission->setData('submissionProgress', '');
 

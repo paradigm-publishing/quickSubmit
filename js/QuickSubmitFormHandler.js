@@ -93,5 +93,30 @@
 		$('#issueId').trigger('change');
 	};
 
+	$(document).on('tinyMCEInitialized', function(event, tinyMCEObject) {
+		var $field = $('#' + $.pkp.classes.Helper.escapeJQuerySelector(tinyMCEObject.id));
+		var $editor = $field.next('.tox-tinymce');
+		if (!$editor.length) {
+			return;
+		}
+
+		if ($field.hasClass('titleRichContent')) {
+			$editor.css('height', '80px');
+			$editor.find('iframe').css('height', '80px');
+			if (tinyMCEObject && tinyMCEObject.theme && tinyMCEObject.theme.resizeTo) {
+				tinyMCEObject.theme.resizeTo(null, 80);
+			}
+			return;
+		}
+
+		if ($field.hasClass('extendedRichContent')) {
+			$editor.css('height', '220px');
+			$editor.find('iframe').css('height', '220px');
+			if (tinyMCEObject && tinyMCEObject.theme && tinyMCEObject.theme.resizeTo) {
+				tinyMCEObject.theme.resizeTo(null, 220);
+			}
+		}
+	});
+
 	/** @param {jQuery} $ jQuery closure. */
 }(jQuery));
