@@ -93,6 +93,38 @@
 		$('#issueId').trigger('change');
 	};
 
+	/**
+	 * Height of the quickSubmit rich-text editors, in pixels.
+	 *
+	 * These override the rows-based height SiteHandler.js derives from the
+	 * textarea's `rows` attribute, so changing `rows` in the template has no
+	 * effect — change these instead.
+	 */
+	var EDITOR_HEIGHTS = {
+		titleRichContent: 130,
+		extendedRichContent: 220
+	};
+
+	/**
+	 * Size one editor.
+	 *
+	 * Only the container is sized — TinyMCE flexes the content iframe into
+	 * whatever the toolbar leaves over. This used to force the iframe to the
+	 * full height as well, which pushed the content area down under the
+	 * toolbar: the field rendered one visible line high but scrolled, and the
+	 * placeholder sat half out of view.
+	 *
+	 * @param {jQuery} $editor The .tox-tinymce container.
+	 * @param {Object} tinyMCEObject The editor instance.
+	 * @param {number} height Total height in pixels.
+	 */
+	function resizeEditor($editor, tinyMCEObject, height) {
+		$editor.css('height', height + 'px');
+		if (tinyMCEObject && tinyMCEObject.theme && tinyMCEObject.theme.resizeTo) {
+			tinyMCEObject.theme.resizeTo(null, height);
+		}
+	}
+
 	$(document).on('tinyMCEInitialized', function(event, tinyMCEObject) {
 		var $field = $('#' + $.pkp.classes.Helper.escapeJQuerySelector(tinyMCEObject.id));
 		var $editor = $field.next('.tox-tinymce');
@@ -101,20 +133,12 @@
 		}
 
 		if ($field.hasClass('titleRichContent')) {
-			$editor.css('height', '80px');
-			$editor.find('iframe').css('height', '80px');
-			if (tinyMCEObject && tinyMCEObject.theme && tinyMCEObject.theme.resizeTo) {
-				tinyMCEObject.theme.resizeTo(null, 80);
-			}
+			resizeEditor($editor, tinyMCEObject, EDITOR_HEIGHTS.titleRichContent);
 			return;
 		}
 
 		if ($field.hasClass('extendedRichContent')) {
-			$editor.css('height', '220px');
-			$editor.find('iframe').css('height', '220px');
-			if (tinyMCEObject && tinyMCEObject.theme && tinyMCEObject.theme.resizeTo) {
-				tinyMCEObject.theme.resizeTo(null, 220);
-			}
+			resizeEditor($editor, tinyMCEObject, EDITOR_HEIGHTS.extendedRichContent);
 		}
 	});
 
