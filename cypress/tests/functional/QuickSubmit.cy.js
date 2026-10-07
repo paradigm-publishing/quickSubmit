@@ -7,6 +7,22 @@
  *
  */
 
+/**
+ * Collapse any open multilingual localization popover.
+ *
+ * Both the title and the abstract are TinyMCE fields, and typing into one
+ * leaves its popover expanded over the rest of the form — covering the
+ * contributors grid and the publication controls below it. The popover only
+ * hides on the editor's blur event, which setTinyMceContent never fires.
+ */
+function closeMultilingualPopovers() {
+	// Move focus to a field outside the popovers. TinyMCE fires its own blur
+	// when the editor iframe loses focus, which is what the handler listens
+	// for; firing it synthetically is not enough, because the handler first
+	// checks whether anything inside the popover still holds focus.
+	cy.get('select[id="sectionId"]').focus();
+}
+
 describe('Quick Submit plugin tests', function() {
 	it('Creates a published quick submission', function() {
 		cy.login('admin', 'admin', 'publicknowledge');
@@ -17,10 +33,13 @@ describe('Quick Submit plugin tests', function() {
 		cy.waitJQuery(); // Wait for form resubmission hack on section change.
 		cy.wait(2000); // FIXME: Detached element delay
 
-		cy.get('input[id^="title-en-"]').type('QuickSubmit Published Test Submission', {delay: 0});
+		cy.get('textarea[id^="title-en-"]').then(node => {
+			cy.setTinyMceContent(node.attr('id'), 'QuickSubmit Published Test Submission');
+		});
 		cy.get('textarea[id^="abstract-en-"]').then(node => {
 			cy.setTinyMceContent(node.attr('id'), 'This is a published QuickSubmit test submission.');
 		});
+		closeMultilingualPopovers();
 
 		// Add an author
 		cy.get('a[id^="component-grid-users-author-authorgrid-addAuthor-button-"]').click();
@@ -37,8 +56,9 @@ describe('Quick Submit plugin tests', function() {
 		// Schedule for publication
 		cy.get('input#articlePublished').click();
 		cy.get('select#issueId').select('Vol. 1 No. 2 (2014)');
-		cy.get('input[id^="datePublished-"]:visible').type('2020-01-01', {delay: 0});
-		cy.get('input[id^="licenseUrl"]').click(); // Take focus out of datepicker
+		cy.get('input[id^="datePublished-"]:visible')
+			.type('2020-01-01', {delay: 0})
+			.blur(); // Close the datepicker so it doesn't cover the fields below
 
 		// Add a galley
 		cy.get('a[id^="component-grid-articlegalleys-articlegalleygrid-addGalley-button-"]').click();
@@ -80,10 +100,13 @@ describe('Quick Submit plugin tests', function() {
 		cy.waitJQuery(); // Wait for form resubmission hack on section change.
 		cy.wait(2000); // FIXME: Detached element delay
 
-		cy.get('input[id^="title-en-"]').type('QuickSubmit Unpublished Test Submission', {delay: 0});
+		cy.get('textarea[id^="title-en-"]').then(node => {
+			cy.setTinyMceContent(node.attr('id'), 'QuickSubmit Unpublished Test Submission');
+		});
 		cy.get('textarea[id^="abstract-en-"]').then(node => {
 			cy.setTinyMceContent(node.attr('id'), 'This is an unpublished QuickSubmit test submission.');
 		});
+		closeMultilingualPopovers();
 
 		// Add an author
 		cy.get('a[id^="component-grid-users-author-authorgrid-addAuthor-button-"]').click();
@@ -100,6 +123,13 @@ describe('Quick Submit plugin tests', function() {
 		// Complete the submission
 		cy.get('form[id="quickSubmitForm"] button:contains("Save")').click();
 		cy.get('a:contains("Go to Submission")').click();
+
+		// This fork sends quick submissions to Copyediting; upstream sends them
+		// straight to Production.
+		cy.contains('Workflow: Copyediting');
+
+		// Unpublished, so it can still be scheduled from the publication panel.
+		cy.get('a:contains("Title & Abstract")').click();
 		cy.get('button:contains("Schedule For Publication")');
 	});
 })
