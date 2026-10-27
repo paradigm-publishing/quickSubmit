@@ -88,13 +88,19 @@ class QuickSubmitPlugin extends ImportExportPlugin
                 return $this->_saveUploadedImage($request);
             case 'deleteCoverImage':
                 return $this->_deleteUploadedImage($request);
-            default:
+            case 'addSubmit':
                 $templateMgr->assign([
                     'pageTitle' => $this->getDisplayName(),
                 ]);
                 $form = new QuickSubmitForm($this, $request);
                 $form->initData();
                 $form->display($request);
+                break;
+            default:
+                $templateMgr->assign([
+                    'pageTitle' => $this->getDisplayName(),
+                ]);
+                $templateMgr->display($this->getTemplateResource('main.tpl'));
                 break;
         }
     }
