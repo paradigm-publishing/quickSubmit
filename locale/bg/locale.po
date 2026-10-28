@@ -49,3 +49,6 @@ msgstr "Добавка (плъгин) за подаване на материа�
 
 msgid "plugins.importexport.quickSubmit.displayName"
 msgstr "Добавка (плъгин) QuickSubmit"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Добавяне на нов подаден материал"

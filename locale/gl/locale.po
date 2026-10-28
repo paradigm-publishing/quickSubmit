@@ -48,3 +48,6 @@ msgstr "Complemento para o envío nun paso"
 
 msgid "plugins.importexport.quickSubmit.displayName"
 msgstr "Complemento QuickSubmit"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Engadir un novo envío"

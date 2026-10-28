@@ -52,3 +52,6 @@ msgid "plugins.importexport.quickSubmit.descriptionLong"
 msgstr ""
 "Acest plugin vă permite să adăugați rapid articole complete la etapa de "
 "producție sau direct într-un număr de revistă."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Adăugați o înregistrare de manuscris nouă"

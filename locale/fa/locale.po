@@ -25,3 +25,6 @@ msgstr "ایجاد مقاله با موفقیت صورت کرفت."
 
 msgid "plugins.importexport.quickSubmit.successReturn"
 msgstr "بازگشت به پلاگین ساب میت سریع."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "افزودن ارسال جدید"

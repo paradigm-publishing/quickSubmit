@@ -48,3 +48,6 @@ msgstr "გადასვლა მასალაზე"
 
 msgid "plugins.importexport.quickSubmit.selectIssue"
 msgstr "გამოცემა უნდა შეირჩეს"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "ახალი მასალის დამატება"

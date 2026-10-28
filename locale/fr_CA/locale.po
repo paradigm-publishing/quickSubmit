@@ -52,3 +52,6 @@ msgid "plugins.importexport.quickSubmit.descriptionLong"
 msgstr ""
 "Ce plugiciel vous permet d'ajouter rapidement des soumissions complètes à "
 "l'étape de production ou directement dans un numéro."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Ajouter une nouvelle soumission"

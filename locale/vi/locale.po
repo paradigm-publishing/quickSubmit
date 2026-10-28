@@ -48,3 +48,6 @@ msgstr "Plugin gửi bài một bước"
 
 msgid "plugins.importexport.quickSubmit.displayName"
 msgstr "Plugin Gửi nhanh"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Thêm bài gửi mới"

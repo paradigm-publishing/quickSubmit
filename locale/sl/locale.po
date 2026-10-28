@@ -49,3 +49,6 @@ msgstr "Vtičnik za oddajo v enem koraku"
 
 msgid "plugins.importexport.quickSubmit.displayName"
 msgstr "Vtičnik za hitri vnos članka"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Dodaj nov članek"

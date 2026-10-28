@@ -51,3 +51,6 @@ msgstr "Indsendelse blev annulleret."
 
 msgid "plugins.importexport.quickSubmit.cancel"
 msgstr "Indsendelse annulleret"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Tilføj ny indsendelse"

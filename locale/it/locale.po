@@ -51,3 +51,6 @@ msgid "plugins.importexport.quickSubmit.descriptionLong"
 msgstr ""
 "Questo plugin consente di aggiungere articoli in fase di produzione o "
 "direttamente ad un fascicolo."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Aggiungi un nuovo articolo"

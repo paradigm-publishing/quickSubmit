@@ -51,3 +51,6 @@ msgid "plugins.importexport.quickSubmit.descriptionLong"
 msgstr ""
 "Bu eklenti hızlı bir şekilde üretim aşamasına veya doğrudan bir sayıya "
 "makale eklemenize imkan sağlar."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Yeni gönderi ekle"

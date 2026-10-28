@@ -53,3 +53,6 @@ msgstr "Опубліковано"
 
 msgid "plugins.importexport.quickSubmit.cancelDescription"
 msgstr "Подачу було скасовано."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Додати нове подання"

@@ -50,3 +50,6 @@ msgstr "キャンセルされた投稿"
 
 msgid "plugins.importexport.quickSubmit.descriptionLong"
 msgstr "このプラグインを使うと、完全な投稿作品を制作段階に素早く追加したり、巻号に直接追加できます。"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "新規投稿を追加"

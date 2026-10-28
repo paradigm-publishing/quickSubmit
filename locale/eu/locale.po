@@ -38,3 +38,6 @@ msgstr "Argitaratu gabe"
 
 msgid "plugins.importexport.quickSubmit.published"
 msgstr "Argitaratua"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Gehitu bidalketa berria"

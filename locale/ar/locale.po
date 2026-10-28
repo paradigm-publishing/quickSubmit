@@ -73,3 +73,6 @@ msgstr "الذهاب إلى طلب التقديم"
 
 msgid "plugins.importexport.quickSubmit.selectIssue"
 msgstr "لا بد من اختيار العدد"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "إضافة طلب تقديم جديد"

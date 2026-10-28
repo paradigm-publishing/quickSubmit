@@ -25,3 +25,6 @@ msgstr "创建文章成功"
 
 msgid "plugins.importexport.quickSubmit.successReturn"
 msgstr "返回快速投稿插件"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "添加新投稿"

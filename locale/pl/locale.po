@@ -53,3 +53,6 @@ msgstr "Idź do zgłoszenia"
 
 msgid "plugins.importexport.quickSubmit.selectIssue"
 msgstr "Należy wybrać numer czasopisma"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Dodaj nowe zgłoszenie"

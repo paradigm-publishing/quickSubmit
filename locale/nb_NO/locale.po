@@ -49,3 +49,6 @@ msgstr "Innleveringen ble avbrutt."
 
 msgid "plugins.importexport.quickSubmit.cancel"
 msgstr "Innleveringen er avbrutt"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Legg til ny innlevering"

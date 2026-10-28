@@ -51,3 +51,6 @@ msgid "plugins.importexport.quickSubmit.descriptionLong"
 msgstr ""
 "Esse plugin lhe permite inserir rapidamente submissões completas para o "
 "estágio de produção ou diretamente em uma edição."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Adicionar nova submissão"

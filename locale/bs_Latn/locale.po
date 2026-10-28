@@ -49,3 +49,6 @@ msgstr "Dodatak za predaju rada u jednom koraku"
 
 msgid "plugins.importexport.quickSubmit.displayName"
 msgstr "QuickSubmit Dodatak"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Dodaj novu predaju rada"

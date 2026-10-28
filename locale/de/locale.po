@@ -49,3 +49,6 @@ msgstr "Die Einreichung wurde abgebrochen."
 
 msgid "plugins.importexport.quickSubmit.cancel"
 msgstr "Einreichung abgebrochen"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Neue Einreichung hinzufügen"

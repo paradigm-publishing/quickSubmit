@@ -49,3 +49,6 @@ msgstr "Plugin penghantaran satu langkah"
 
 msgid "plugins.importexport.quickSubmit.displayName"
 msgstr "Plugin QuickSubmit"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Tambah Penyerahan baharu"

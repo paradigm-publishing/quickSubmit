@@ -49,3 +49,6 @@ msgstr "Поднесувањето е повлечено"
 
 msgid "plugins.importexport.quickSubmit.successReturn"
 msgstr "Врати се на плагинот за брзо поднесување."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Додај ново поднесување"

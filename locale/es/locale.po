@@ -51,3 +51,6 @@ msgstr "Envío fue cancelado."
 
 msgid "plugins.importexport.quickSubmit.cancel"
 msgstr "Envío cancelado"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Añadir nuevo envío"

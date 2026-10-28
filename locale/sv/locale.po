@@ -49,3 +49,6 @@ msgstr "Bidraget avbröts."
 
 msgid "plugins.importexport.quickSubmit.cancel"
 msgstr "Avbruten"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Lägg till nytt bidrag"

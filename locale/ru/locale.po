@@ -46,3 +46,6 @@ msgstr "Перейти к материалу"
 
 msgid "plugins.importexport.quickSubmit.selectIssue"
 msgstr "Выпуск должен быть выбран"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Добавить новый материал"

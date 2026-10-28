@@ -51,3 +51,6 @@ msgid "plugins.importexport.quickSubmit.descriptionLong"
 msgstr ""
 "Aquest mòdul permet afegir trameses ràpidament a la fase de producció o "
 "directament a un número."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Afegeix una nova tramesa"

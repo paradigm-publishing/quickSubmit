@@ -50,3 +50,6 @@ msgstr "Մեկ քայլանի ներկայացման հավելված"
 
 msgid "plugins.importexport.quickSubmit.displayName"
 msgstr "QuickSubmit փլագին"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Ավելացնել նոր ներկայացում"

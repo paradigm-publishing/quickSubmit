@@ -51,3 +51,6 @@ msgid "plugins.importexport.quickSubmit.descriptionLong"
 msgstr ""
 "Tento plugin umožňuje rychle přidat kompletní příspěvek do produkční fáze, "
 "nebo ho přímo přidat do čísla."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Přidat nový příspěvek"

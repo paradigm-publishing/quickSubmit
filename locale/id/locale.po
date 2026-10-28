@@ -51,3 +51,6 @@ msgid "plugins.importexport.quickSubmit.descriptionLong"
 msgstr ""
 "Plugin ini memungkinkan Anda mengunggah naskah dengan cepat ke tahap "
 "produksi atau nomor terbitan secara langsung."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Tambah naskah baru"

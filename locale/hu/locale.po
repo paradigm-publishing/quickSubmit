@@ -48,3 +48,6 @@ msgstr "Egylépéses beküldés"
 
 msgid "plugins.importexport.quickSubmit.displayName"
 msgstr "Gyorsbeküldő Plugin"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Új beküldés hozzáadása"

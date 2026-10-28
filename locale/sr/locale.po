@@ -53,3 +53,6 @@ msgstr "Idi na Podnošenje"
 
 msgid "plugins.importexport.quickSubmit.selectIssue"
 msgstr "Problem mora biti obeležen"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Dodaj novo podnošenje"

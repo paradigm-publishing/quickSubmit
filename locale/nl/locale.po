@@ -51,3 +51,6 @@ msgid "plugins.importexport.quickSubmit.descriptionLong"
 msgstr ""
 "Met deze plugin kunt u snel complete ingezonden stukken toevoegen aan de "
 "productiefase of aan een nummer."
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Nieuwe inzending toevoegen"

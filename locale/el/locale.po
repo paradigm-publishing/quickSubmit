@@ -51,3 +51,6 @@ msgstr "Η υποβολή ακυρώθηκε."
 
 msgid "plugins.importexport.quickSubmit.cancel"
 msgstr "Ακύρωση Υποβολής"
+
+msgid "plugins.importexport.quickSubmit.add"
+msgstr "Προσθήκη νέας υποβολής"
