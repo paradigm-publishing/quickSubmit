@@ -125,12 +125,52 @@
 		}
 	}
 
+	/**
+	 * Left/right inset of the editor's text, in pixels.
+	 *
+	 * Matches the `padding` on `html, body` in the TinyMCE plugin's
+	 * styles/content.css, which is what sets the content origin — and so where
+	 * the caret sits in an empty field.
+	 */
+	var CONTENT_PADDING = 14;
+
+	/**
+	 * Line the placeholder up with the caret.
+	 *
+	 * The tinymce-5 skin absolutely positions the placeholder at `left: 1px`
+	 * against the content body, but our content.css pads the body by
+	 * CONTENT_PADDING. The text therefore starts 13px right of the
+	 * placeholder, putting the caret partway through the placeholder word.
+	 * Re-inset the placeholder to match.
+	 *
+	 * The selectors are deliberately prefixed with `html`: dom.addStyle()
+	 * inserts its <style> as the first child of the iframe's <head>, ahead of
+	 * the skin's <link>, so an identical selector would lose the cascade on
+	 * source order. The extra type selector outweighs it instead.
+	 *
+	 * @param {Object} tinyMCEObject The editor instance.
+	 */
+	function alignPlaceholder(tinyMCEObject) {
+		if (!tinyMCEObject || !tinyMCEObject.dom || !tinyMCEObject.dom.addStyle) {
+			return;
+		}
+		tinyMCEObject.dom.addStyle(
+				'html .mce-content-body:not([dir=rtl])[data-mce-placeholder]' +
+				':not(.mce-visualblocks)::before{left:' +
+				CONTENT_PADDING + 'px}' +
+				'html .mce-content-body[dir=rtl][data-mce-placeholder]' +
+				':not(.mce-visualblocks)::before{right:' +
+				CONTENT_PADDING + 'px}');
+	}
+
 	$(document).on('tinyMCEInitialized', function(event, tinyMCEObject) {
 		var $field = $('#' + $.pkp.classes.Helper.escapeJQuerySelector(tinyMCEObject.id));
 		var $editor = $field.next('.tox-tinymce');
 		if (!$editor.length) {
 			return;
 		}
+
+		alignPlaceholder(tinyMCEObject);
 
 		if ($field.hasClass('titleRichContent')) {
 			resizeEditor($editor, tinyMCEObject, EDITOR_HEIGHTS.titleRichContent);
